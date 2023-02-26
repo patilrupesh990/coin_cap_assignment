@@ -72,7 +72,7 @@ const columnsSmScreen = [
         dataIndex: 'price',
     },
     {
-        title: 'Change(24Hr)',
+        title: '24Hr',
         dataIndex: 'ch24',
     }
 ]
