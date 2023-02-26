@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.min.js'
+import React from 'react';
+import { Space } from 'antd';
+import NavBar from './components/NavBar/NavBar';
+import Summary from './components/Summary/Summary';
+import CoinList from './components/CoinsList/index'
+import store from './store';
+import { Provider } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <>
+        <Provider store={store}>
+          <NavBar />
+          <Summary />
+          <CoinList />
+        </Provider>
+      </>
+    )
+  }
 }
 
 export default App;
