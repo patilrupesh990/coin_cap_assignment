@@ -45,6 +45,11 @@ const columnsLgScreen = [
     {
         title: 'Change(24Hr)',
         dataIndex: 'ch24',
+        render: (change)=>
+            <div>
+                <p style={parseInt(change)>=0?{color:'green'}:{color:'red'}}>{change}%</p>
+            </div>
+        
     }
 ];
 
@@ -52,9 +57,9 @@ const columnsSmScreen = [
     {
         title: 'Name',
         dataIndex: 'name',
-        render: (name, data) => <div style={{ fontSize: '1.2em', display: 'flex' }}>
+        render: (name, data) => <div style={{ fontSize: '1.1em', display: 'flex' }}>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '10px' }}>
-                <img style={{ height: '40px', width: '40px' }} src={`https://assets.coincap.io/assets/icons/${data.symbol.toLowerCase()}@2x.png`} />
+                <img style={{ height: '25px', width: '25px' }} src={`https://assets.coincap.io/assets/icons/${data.symbol.toLowerCase()}@2x.png`} />
             </div>
             <div>
                 <div>{name}</div>

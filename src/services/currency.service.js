@@ -1,5 +1,5 @@
 import axios from "axios"
-import { formatedCurrency } from "../common/currenyformate";
+import { formatedBigValues, formatedCurrency } from "../common/currenyformate";
 
 function service() {
 
@@ -14,12 +14,12 @@ function service() {
                             key: currency.id,
                             rank: currency.rank,
                             name: currency.name,
-                            price: formatedCurrency(parseInt(currency.priceUsd)),
-                            mcap: formatedCurrency(parseInt(currency.marketCapUsd)),
+                            price: formatedCurrency(parseFloat(currency.priceUsd)),
+                            mcap: formatedCurrency(parseFloat(currency.marketCapUsd)),
                             vwap: formatedCurrency(currency.vwap24Hr),
-                            supply: parseInt(currency.supply).toFixed(2),
+                            supply:formatedBigValues(parseFloat(currency.supply).toFixed(2)),
                             volume: formatedCurrency(currency.volumeUsd24Hr),
-                            ch24: parseInt(currency.changePercent24Hr).toFixed(2)+"%",
+                            ch24: parseFloat(currency.changePercent24Hr).toFixed(2),
                             symbol: currency.symbol
                         }
                         currencyData.push(curObj)
